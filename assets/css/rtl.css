@@ -1,0 +1,31 @@
+/* RTL (Right-to-Left) Styles */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .navbar-brand {
+  /* Logo and text ordering */
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-actions {
+  /* Reversed order for buttons */
+  flex-direction: row-reverse;
+}
+
+/* Ensure padding on cards and other components match the RTL flow */
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-visual::after {
+  /* If animation has horizontal movement, it should be mirrored here */
+  /* Our scanline goes top to bottom, so it's fine, but let's mirror any horizontal keyframes later if added */
+}
+
+@media (max-width: 1024px) {
+  html[dir="rtl"] body {
+    text-align: center; /* keep centered on tablet/mobile */
+  }
+}

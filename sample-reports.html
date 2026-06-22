@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Reports | PropertyIntel</title>
+    <meta name="description" content="View our premium inspection reports featuring defect categories and severity ratings.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .severity-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 520;
+            margin-bottom: 1rem;
+        }
+        .severity-high { background: #fee2e2; color: #dc2626; }
+        .severity-medium { background: #fef3c7; color: #d97706; }
+        .severity-low { background: #e0f2fe; color: #0284c7; }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Premium Floating Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                PropertyIntel
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" onclick="event.preventDefault();">
+                        Home
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="inspection-process.html">Process</a></li>
+                <li><a href="sample-reports.html" style="color: var(--property-sage);">Reports</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-only-toggles" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <button class="btn btn-secondary btn-icon theme-toggle" title="Toggle Dark Mode" style="border: 1px solid var(--border);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                    <button class="btn btn-secondary btn-icon rtl-toggle" title="Toggle RTL" style="border: 1px solid var(--border);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+                    </button>
+                </li>
+                <li class="mobile-only-cta" style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <a href="schedule-inspection.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-bottom: 0.5rem;">Schedule Inspection</a>
+                    <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a>
+                </li>
+            </ul>
+                        <div class="nav-actions">
+                <button id="theme-toggle" class="btn btn-secondary btn-icon" title="Toggle Dark Mode">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <button id="rtl-toggle" class="btn btn-secondary btn-icon" title="Toggle RTL">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+                </button>
+                <a href="schedule-inspection.html" class="btn btn-secondary">Schedule Inspection</a>
+                <a href="login.html" class="btn btn-primary">Login</a>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section bg-secondary" style="min-height: 40vh; padding-top: 10rem;">
+        <div class="container text-center">
+            <span class="subheading">Transparency Standard</span>
+            <h1>Sample Inspection Reports</h1>
+            <p style="max-width: 800px; margin: 0 auto;">We believe in complete transparency. Review exactly what our deliverables look like before you book your assessment.</p>
+        </div>
+    </section>
+
+    <!-- Report Defect Showcase -->
+    <section>
+        <div class="container grid grid-2" style="align-items: stretch; gap: 3rem;">
+            <div>
+                <h2>Severity Ratings System</h2>
+                <p>Our reports don't just list problems; they help you prioritize them. Every defect is categorized so you know what requires immediate action and what is standard maintenance.</p>
+                <div style="margin-top: 2rem;">
+                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--border-radius); background: var(--card-background);">
+                        <span class="severity-badge severity-high">Safety Hazard / Major Defect</span>
+                        <p class="card-text" style="margin: 0;">Requires immediate repair or significant negotiation. Examples: Structural failure, active roof leaks, faulty electrical panels.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--border-radius); background: var(--card-background);">
+                        <span class="severity-badge severity-medium">Minor Defect</span>
+                        <p class="card-text" style="margin: 0;">Should be repaired but does not immediately threaten the property. Examples: Minor plumbing drips, sticking doors, aging appliances.</p>
+                    </div>
+                    <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--border-radius); background: var(--card-background);">
+                        <span class="severity-badge severity-low">Routine Maintenance</span>
+                        <p class="card-text" style="margin: 0;">Standard upkeep required of any homeowner. Examples: Gutter cleaning needed, filter replacement, minor paint touch-ups.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="animate-on-scroll" style="height: 100%; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <img src="assets/images/inspector_tablet_1781869563510.png" alt="Digital Report Preview" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Structural Blueprint Analysis (Unique Layout & Animation) -->
+    <section style="background-color: var(--secondary-background); color: var(--text-primary); position: relative; overflow: hidden; padding: 6rem 0;">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+            <div style="position: relative; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                <img src="assets/images/interactive_blueprint_report.png" alt="Blueprint Analysis" style="width: 100%; height: auto; display: block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                
+                <!-- Animated Hotspots -->
+                <div class="hotspot-pulse" style="top: 30%; left: 40%;" title="Load-bearing defect detected"></div>
+                <div class="hotspot-pulse" style="top: 60%; right: 25%;" title="Plumbing irregularity"></div>
+                <div class="hotspot-pulse" style="bottom: 20%; left: 20%;" title="Foundation settling"></div>
+            </div>
+            <div style="z-index: 2;">
+                <h2 style="color: var(--text-primary);">Structural Blueprint Analysis</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Every premium report includes an architectural breakdown. We map out exact load-bearing flaws, foundation settling, and layout anomalies directly on your property's schematic.</p>
+                <ul class="card-list" style="list-style: none; padding: 0; color: var(--text-secondary); flex-direction: column;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                        <span style="color: var(--copper-clay); font-size: 1.2rem;">✓</span> Precision foundation plotting
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;">
+                        <span style="color: var(--copper-clay); font-size: 1.2rem;">✓</span> Load-bearing wall identification
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 1rem;">
+                        <span style="color: var(--copper-clay); font-size: 1.2rem;">✓</span> MEP (Mechanical, Electrical, Plumbing) routing
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Advanced Thermal Diagnostics (Unique Overlapping Layout) -->
+    <section style="padding: 8rem 0; overflow: hidden; border-bottom: 1px solid var(--border);">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+            <div style="padding-right: 2rem; z-index: 2;">
+                <span class="subheading">Beyond the Visible</span>
+                <h2>Advanced Environmental Diagnostics</h2>
+                <p>We don't just look at walls; we look through them. Premium survey reports leverage state-of-the-art diagnostic technology to eliminate the guesswork of property investment.</p>
+                
+                <div style="margin-top: 2.5rem; display: grid; gap: 1.5rem;">
+                    <div style="background: var(--secondary-background); padding: 1.5rem; border-left: 4px solid var(--property-sage); border-radius: 0 8px 8px 0;">
+                        <h5 style="margin-bottom: 0.25rem;">Moisture Intrusion</h5>
+                        <p class="caption" style="margin: 0;">Detect water behind walls before mold forms.</p>
+                    </div>
+                    <div style="background: var(--secondary-background); padding: 1.5rem; border-left: 4px solid var(--copper-clay); border-radius: 0 8px 8px 0;">
+                        <h5 style="margin-bottom: 0.25rem;">Electrical Overloads</h5>
+                        <p class="caption" style="margin: 0;">Identify overheating breakers instantly.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative; z-index: 1;">
+                <img src="assets/images/thermal_imaging_report.png" alt="Thermal Imaging" style="width: 100%; border-radius: var(--border-radius); box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                
+                <!-- Floating Glassmorphism Card -->
+                <div class="glass-float-card" style="z-index: 2;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔥</div>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">Thermal Signature Capture</h4>
+                    <p style="font-size: 0.9rem; margin: 0; color: rgba(255,255,255,0.8);">Our military-grade thermal cameras expose missing insulation, hidden moisture, and electrical hotspots invisible to the naked eye.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Previews -->
+    <section class="bg-secondary text-center">
+        <div class="container">
+            <h2 style="margin-bottom: 3rem;">Download Sample Reports</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">📄</div>
+                    <h4 class="card-title">Residential Home Report</h4>
+                    <p class="card-text">A complete 45-page visual report for a standard single-family property.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-secondary" style="width: 100%;">Download PDF</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏗️</div>
+                    <h4 class="card-title">Structural Survey Report</h4>
+                    <p class="card-text">An in-depth engineering review focusing on foundation and load-bearing integrity.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-secondary" style="width: 100%;">Download PDF</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h4 class="card-title">Commercial Diligence</h4>
+                    <p class="card-text">Extensive asset condition assessment for a multi-family residential building.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-secondary" style="width: 100%;">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--slate-charcoal); color: #fff; padding: 4rem 1rem 2rem 1rem;">
+        <div class="container grid grid-4">
+            <div>
+                <a href="index.html" class="navbar-brand" style="margin-bottom: 1rem; padding: 0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    PropertyIntel
+                </a>
+                <p style="color: var(--soft-stone); font-size: 0.9rem;">Premium property intelligence and building surveys ensuring you avoid expensive mistakes.</p>
+                <div class="footer-socials" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#1877F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#0077b5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Services</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Buyer Inspections</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Seller Inspections</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Commercial Surveys</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Company</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="about.html" style="color: var(--soft-stone); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="inspection-process.html" style="color: var(--soft-stone); text-decoration: none;">Our Process</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: var(--soft-stone); text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Legal</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--soft-stone); text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--soft-stone); text-decoration: none;">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; text-align: center; color: var(--soft-stone); font-size: 0.85rem;">
+            &copy; 2026 PropertyIntel Services. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

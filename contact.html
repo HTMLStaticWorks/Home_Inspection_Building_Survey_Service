@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PropertyIntel</title>
+    <meta name="description" content="Contact our property intelligence firm.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-control { width: 100%; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; background: var(--card-background); color: var(--text-primary); transition: var(--transition); }
+        .form-control:focus { outline: none; border-color: var(--property-sage); box-shadow: 0 0 0 3px rgba(95, 116, 100, 0.1); }
+        .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .social-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--secondary-background); color: var(--property-sage); text-decoration: none; transition: var(--transition); border: 1px solid var(--border); }
+        .social-icon:hover { background: var(--property-sage); color: var(--text-primary); border-color: var(--property-sage); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(95, 116, 100, 0.2); }
+        .contact-info-item { margin-bottom: 2rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+        @media (max-width: 768px) {
+            .contact-info-item { flex-direction: column; align-items: center; text-align: center; gap: 0.5rem; }
+            .social-links { justify-content: center; }
+            .contact-form-card { padding: 1.5rem !important; }
+        }
+        .contact-form-card { background: var(--card-background); border: 1px solid var(--border); padding: 3rem; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Premium Floating Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                PropertyIntel
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" onclick="event.preventDefault();">
+                        Home
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="inspection-process.html">Process</a></li>
+                <li><a href="sample-reports.html">Reports</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html" style="color: var(--property-sage);">Contact</a></li>
+                <li class="mobile-only-toggles" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <button class="btn btn-secondary btn-icon theme-toggle" title="Toggle Dark Mode" style="border: 1px solid var(--border);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                    <button class="btn btn-secondary btn-icon rtl-toggle" title="Toggle RTL" style="border: 1px solid var(--border);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+                    </button>
+                </li>
+                <li class="mobile-only-cta" style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <a href="schedule-inspection.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-bottom: 0.5rem;">Schedule Inspection</a>
+                    <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a>
+                </li>
+            </ul>
+                        <div class="nav-actions">
+                <button id="theme-toggle" class="btn btn-secondary btn-icon" title="Toggle Dark Mode">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <button id="rtl-toggle" class="btn btn-secondary btn-icon" title="Toggle RTL">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+                </button>
+                <a href="schedule-inspection.html" class="btn btn-secondary">Schedule Inspection</a>
+                <a href="login.html" class="btn btn-primary">Login</a>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section bg-secondary" style="min-height: 40vh; padding-top: 10rem;">
+        <div class="container text-center">
+            <span class="subheading">Get in Touch</span>
+            <h1>Contact Our Experts</h1>
+            <p style="max-width: 800px; margin: 0 auto;">Need specialized consulting or have questions about our services? Reach out to our intelligence team.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="container grid grid-2" style="align-items: flex-start;">
+            <div>
+                <h2>Direct Communication</h2>
+                <p>We prioritize clear and rapid communication to align with real estate transaction timelines.</p>
+                
+                <div style="margin-top: 3rem;">
+                    <div class="contact-info-item">
+                        <div style="font-size: 2rem; color: var(--copper-clay);">📞</div>
+                        <div>
+                            <span class="label">Phone Support (24/7 Hotline)</span>
+                            <h4 style="margin: 0.5rem 0;">+1 (800) 555-0199</h4>
+                            <p class="caption">For urgent scheduling, call directly.</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div style="font-size: 2rem; color: var(--copper-clay);">✉️</div>
+                        <div>
+                            <span class="label">Email inquiries</span>
+                            <h4 style="margin: 0.5rem 0;">intel@propertyintel.com</h4>
+                            <p class="caption">We respond to all emails within 2 hours.</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item" style="margin-bottom: 0;">
+                        <div style="font-size: 2rem; color: var(--copper-clay);">📍</div>
+                        <div>
+                            <span class="label">Headquarters</span>
+                            <h4 style="margin: 0.5rem 0;">100 Intelligence Way, Suite 400<br>Metropolis, NY 10001</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-icon" title="LinkedIn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                                <a href="#" class="social-icon" title="Twitter">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                                </a>
+                                <a href="#" class="social-icon" title="Facebook">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-card">
+                <h3 style="margin-bottom: 2rem;">Send a Message</h3>
+                <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Inquiry Type</label>
+                        <select class="form-control">
+                            <option>General Question</option>
+                            <option>Commercial Survey Inquiry</option>
+                            <option>Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="5" placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map Location -->
+    <section style="padding-top: 0; padding-bottom: 5rem;">
+        <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6173562691077!2d-73.98785312389148!3d40.74844443538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1718872013837!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--slate-charcoal); color: #fff; padding: 4rem 1rem 2rem 1rem;">
+        <div class="container grid grid-4">
+            <div>
+                <a href="index.html" class="navbar-brand" style="margin-bottom: 1rem; padding: 0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    PropertyIntel
+                </a>
+                <p style="color: var(--soft-stone); font-size: 0.9rem;">Premium property intelligence and building surveys ensuring you avoid expensive mistakes.</p>
+                <div class="footer-socials" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#1877F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#0077b5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Services</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Buyer Inspections</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Seller Inspections</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Commercial Surveys</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Company</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="about.html" style="color: var(--soft-stone); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="inspection-process.html" style="color: var(--soft-stone); text-decoration: none;">Our Process</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: var(--soft-stone); text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Legal</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--soft-stone); text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--soft-stone); text-decoration: none;">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; text-align: center; color: var(--soft-stone); font-size: 0.85rem;">
+            &copy; 2026 PropertyIntel Services. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

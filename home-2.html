@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Inspection & Building Survey Service | Inspection Journey</title>
+    <meta name="description" content="Discover our comprehensive inspection journey. Property intelligence platform for buyers and sellers.">
+    <link rel="stylesheet" href="assets/css/style.css?v=2">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* Home 2 Unique Animations */
+        .timeline-reveal {
+            position: relative;
+            padding-left: 3rem;
+            border-left: 2px solid var(--border);
+            margin: 2rem 0;
+        }
+        .timeline-reveal::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 0;
+            width: 2px;
+            height: 0%;
+            background: var(--copper-clay);
+            animation: pathReveal 3s ease-in-out forwards;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateX(20px);
+            animation: itemReveal 0.5s forwards;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--card-background);
+            border: 2px solid var(--copper-clay);
+            animation: pulseMarker 2s infinite;
+        }
+        .timeline-item:nth-child(1) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(2) { animation-delay: 1.5s; }
+        .timeline-item:nth-child(3) { animation-delay: 2.5s; }
+        
+        @keyframes pathReveal {
+            to { height: 100%; }
+        }
+        @keyframes itemReveal {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        html[dir="rtl"] .timeline-reveal {
+            padding-left: 0;
+            padding-right: 3rem;
+            border-left: none;
+            border-right: 2px solid var(--border);
+        }
+        html[dir="rtl"] .timeline-reveal::before {
+            left: auto;
+            right: -1px;
+        }
+        html[dir="rtl"] .timeline-item {
+            transform: translateX(-20px);
+        }
+        html[dir="rtl"] .timeline-item::before {
+            left: auto;
+            right: -3.5rem;
+        }
+        
+        /* New Premium Animations for Home 2 Sections */
+        @keyframes radarSweep {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+        @keyframes floatDashboard {
+            0%, 100% { transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(-15px); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(95, 116, 100, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(95, 116, 100, 0.8); }
+        }
+        @keyframes dataStream {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 1000px; }
+        }
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 1024px) {
+            .tool-card h4 {
+                flex-direction: column !important;
+                justify-content: center !important;
+                text-align: center !important;
+                gap: 0.5rem !important;
+            }
+            .tool-card p {
+                margin-left: 0 !important;
+                text-align: center !important;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Premium Floating Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                PropertyIntel
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" onclick="event.preventDefault();" style="color: var(--property-sage);">
+                        Home
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html" style="color: var(--property-sage);">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="inspection-process.html">Process</a></li>
+                <li><a href="sample-reports.html">Reports</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="mobile-only-toggles" style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <button class="btn btn-secondary btn-icon theme-toggle" title="Toggle Dark Mode" style="border: 1px solid var(--border);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                    <button class="btn btn-secondary btn-icon rtl-toggle" title="Toggle RTL" style="border: 1px solid var(--border);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+                    </button>
+                </li>
+                <li class="mobile-only-cta" style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <a href="schedule-inspection.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-bottom: 0.5rem;">Schedule Inspection</a>
+                    <a href="login.html" class="btn btn-primary" style="width: 100%; text-align: center;">Login</a>
+                </li>
+            </ul>
+                        <div class="nav-actions">
+                <button id="theme-toggle" class="btn btn-secondary btn-icon" title="Toggle Dark Mode">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <button id="rtl-toggle" class="btn btn-secondary btn-icon" title="Toggle RTL">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+                </button>
+                <a href="schedule-inspection.html" class="btn btn-secondary">Schedule Inspection</a>
+                <a href="login.html" class="btn btn-primary">Login</a>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Inspection Journey -->
+    <section class="hero-section" style="padding-top: 7rem; padding-bottom: 4rem; position: relative; overflow: hidden; min-height: 85vh; display: flex; align-items: center; background-color: var(--secondary-background);">
+        <!-- Glowing Atmospheric Orbs -->
+        <div style="position: absolute; top: -10%; left: -5%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(144,116,92,0.15) 0%, transparent 70%); border-radius: 50%; z-index: 1; animation: floatDashboard 15s infinite alternate;"></div>
+        <div style="position: absolute; bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(95,116,100,0.12) 0%, transparent 70%); border-radius: 50%; z-index: 1; animation: floatDashboard 20s infinite alternate-reverse;"></div>
+
+        <div class="container grid grid-2" style="position: relative; z-index: 2; align-items: center; gap: 5rem; max-width: 1200px;">
+            <!-- Left Side Content (No Card BG) -->
+            <div class="hero-content" style="padding: 1rem 0; transform: translateY(30px); opacity: 0; animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; text-align: center;">
+                
+                <span class="subheading" style="color: var(--copper-clay); letter-spacing: 3px; font-weight: 500; font-size: 0.8rem; display: inline-block; margin-bottom: 1.5rem; border-bottom: 2px solid var(--copper-clay); padding-bottom: 0.5rem;">THE ASSESSMENT PATH</span>
+                <h1 style="color: var(--text-primary); font-size: clamp(2.2rem, 3.8vw, 3.2rem); line-height: 1.1; margin-bottom: 1.5rem; text-shadow: 0 12px 24px rgba(0,0,0,0.5); font-weight: 580; letter-spacing: -0.5px;">Precision Room by Room</h1>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin: 0 auto 3rem auto; max-width: 95%;">Follow our meticulous inspection journey designed to uncover every detail of your future property. Total transparency from foundation to roof, powered by proprietary intelligence.</p>
+                
+                <div class="card-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem;">
+                    <a href="schedule-inspection.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1rem; font-weight: 520; border-radius: 50px; box-shadow: 0 12px 24px rgba(144,116,92,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;">Start Your Journey</a>
+                    <a href="sample-reports.html" class="btn btn-secondary" style="padding: 0.9rem 2rem; font-size: 1rem; font-weight: 520; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); background: var(--card-background); transition: all 0.3s ease; backdrop-filter: blur(5px);">View Sample Report</a>
+                </div>
+                
+                <!-- Horizontal Feature Row (Animated Stats) -->
+                <div style="display: flex; gap: 1.2rem; justify-content: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2.5rem; text-align: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 100px;">
+                        <h4 style="color: var(--text-primary); font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 550;"><span class="stat-counter" data-target="15000">0</span>+</h4>
+                        <p class="caption" style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.2; margin-bottom: 0;">Inspections</p>
+                    </div>
+                    <div style="flex: 1; min-width: 100px;">
+                        <h4 style="color: var(--text-primary); font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 550;"><span class="stat-counter" data-target="500">0</span>+</h4>
+                        <p class="caption" style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.2; margin-bottom: 0;">Data Points</p>
+                    </div>
+                    <div style="flex: 1; min-width: 100px;">
+                        <h4 style="color: var(--text-primary); font-size: 1.4rem; margin-bottom: 0.1rem; font-weight: 550;"><span class="stat-counter" data-target="100">0</span>%</h4>
+                        <p class="caption" style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.2; margin-bottom: 0;">Satisfaction</p>
+                    </div>
+                </div>
+
+                <script>
+                    (function() {
+                        const runCounters = () => {
+                            const counters = document.querySelectorAll('.stat-counter');
+                            counters.forEach(counter => {
+                                const target = +counter.getAttribute('data-target');
+                                const duration = 2000; // ms
+                                const increment = target / (duration / 16);
+                                let current = 0;
+                                const updateCount = () => {
+                                    current += increment;
+                                    if (current < target) {
+                                        counter.innerText = Math.ceil(current).toLocaleString();
+                                        requestAnimationFrame(updateCount);
+                                    } else {
+                                        counter.innerText = target.toLocaleString();
+                                    }
+                                };
+                                setTimeout(updateCount, 800); // Wait for entrance animation
+                            });
+                        };
+                        if (document.readyState === 'loading') {
+                            document.addEventListener('DOMContentLoaded', runCounters);
+                        } else {
+                            runCounters();
+                        }
+                    })();
+                </script>
+            </div>
+            
+            <!-- Hero Image (Right Side) -->
+            <div style="position: relative; border-radius: 28px; overflow: hidden; box-shadow: 0 35px 70px rgba(0,0,0,0.45); transform: translateY(30px); opacity: 0; animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; height: 100%; min-height: 550px; height: 65vh; max-height: 650px;">
+                <img src="assets/images/modern_home_1781869551171.png" alt="Precision Room by Room" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) contrast(1.1);">
+                <div style="position: absolute; inset: 0; border: 1px solid var(--border); border-radius: 28px; pointer-events: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide & Services Section -->
+    <section style="padding: 8rem 0;">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 5rem;">
+                <span class="subheading" style="color: var(--copper-clay); letter-spacing: 3px; font-weight: 500;">TAILORED SOLUTIONS</span>
+                <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-top: 1rem;">Expertise for Every Stakeholder</h2>
+            </div>
+            <div class="grid grid-3 odd-cards" style="gap: 3rem;">
+                <div class="card" style="border-radius: 24px; padding: 2rem; background: var(--secondary-background); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: transform 0.4s ease;">
+                    <img src="assets/images/buyers_review_1781869599172.png" alt="Buyer Guide" style="width: 100%; border-radius: 16px; margin-bottom: 2rem; height: 220px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Home Buyer Guide</h4>
+                    <p class="card-text" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">Avoid costly surprises. We provide the intelligence you need to negotiate effectively and buy with confidence.</p>
+                    <a href="service-details.html" class="btn btn-secondary" style="width: 100%; border-radius: 50px; padding: 1rem;">View Buyer Services</a>
+                </div>
+                <div class="card" style="border-radius: 24px; padding: 2rem; background: var(--secondary-background); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: transform 0.4s ease;">
+                    <img src="assets/images/modern_home_1781869551171.png" alt="Seller Guide" style="width: 100%; border-radius: 16px; margin-bottom: 2rem; height: 220px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Seller Pre-Listing</h4>
+                    <p class="card-text" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">Identify and resolve defects before they derail your sale. Streamline the closing process with our pre-listing survey.</p>
+                    <a href="service-details.html" class="btn btn-secondary" style="width: 100%; border-radius: 50px; padding: 1rem;">View Seller Services</a>
+                </div>
+                <div class="card" style="border-radius: 24px; padding: 2rem; background: var(--secondary-background); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: transform 0.4s ease;">
+                    <img src="assets/images/structural_survey_1781869583652.png" alt="Commercial Guide" style="width: 100%; border-radius: 16px; margin-bottom: 2rem; height: 220px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 class="card-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Commercial Surveys</h4>
+                    <p class="card-text" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">Protect your investment with rigorous commercial building inspections tailored for due diligence.</p>
+                    <a href="service-details.html" class="btn btn-secondary" style="width: 100%; border-radius: 50px; padding: 1rem;">View Commercial Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspection Technology -->
+    <section class="bg-secondary" style="padding: 8rem 0; position: relative;">
+        <div class="container grid grid-2" style="align-items: center; gap: 4rem;">
+            <div style="position: relative; z-index: 2;">
+                <span class="subheading" style="color: var(--copper-clay); letter-spacing: 3px; font-weight: 500;">ADVANCED TOOLS</span>
+                <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-top: 1rem; margin-bottom: 1.5rem;">Next-Generation Inspection Technology</h2>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;">We don't just rely on the naked eye. Our inspectors are equipped with enterprise-grade diagnostic tools to see what others miss.</p>
+                <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem;">
+                    <div class="tool-card" style="padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 1rem; font-size: 1.25rem;"><span style="background: rgba(144,116,92,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--copper-clay);">♨</span> Thermal Imaging</h4>
+                        <p class="caption" style="color: var(--text-secondary); margin-left: 56px; font-size: 1rem;">Detect hidden moisture, insulation gaps, and electrical hot spots without invasive probing.</p>
+                    </div>
+                    <div class="tool-card" style="padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 1rem; font-size: 1.25rem;"><span style="background: rgba(144,116,92,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--copper-clay);">🚁</span> Drone Reconnaissance</h4>
+                        <p class="caption" style="color: var(--text-secondary); margin-left: 56px; font-size: 1rem;">High-resolution mapping of inaccessible roof structures and complex architectural features.</p>
+                    </div>
+                    <div class="tool-card" style="padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid var(--border); transition: transform 0.3s ease;">
+                        <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 1rem; font-size: 1.25rem;"><span style="background: rgba(144,116,92,0.1); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--copper-clay);">📱</span> Digital Reporting</h4>
+                        <p class="caption" style="color: var(--text-secondary); margin-left: 56px; font-size: 1rem;">Interactive, cloud-based reports delivered directly to your device with annotated imagery.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="animate-on-scroll" style="position: relative; border-radius: 30px; overflow: hidden; height: 600px; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
+                <img src="assets/images/hero_inspection_1781869531074.png" alt="Inspector using technology" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9);">
+                <div style="position: absolute; inset: 0; border: 1px solid var(--border); border-radius: 30px; pointer-events: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 1: Interactive Data Dashboard -->
+    <section style="padding: 8rem 0; background-color: var(--secondary-background); color: var(--text-primary); overflow: hidden; position: relative;">
+        <!-- Digital Rain Background -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 200%; background: linear-gradient(rgba(255,255,255,0.01) 50%, transparent 50%); background-size: 100% 4px; animation: dataStream 40s linear infinite; opacity: 0.5; z-index: 1;"></div>
+        
+        <div class="container grid grid-2" style="position: relative; z-index: 2; align-items: center; gap: 4rem;">
+            <div style="order: 2;">
+                <span class="subheading" style="color: var(--property-sage);">Proprietary Intel</span>
+                <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--text-primary); margin-bottom: 1.5rem;">The Ultimate Data Dashboard</h2>
+                <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem;">Experience your property inspection in vivid 3D. Our proprietary platform maps every defect to a digital twin of your home, giving you unprecedented spatial awareness.</p>
+                
+                <div class="card-list" style="flex-direction: column; gap: 1.5rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; background: var(--card-background); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+                        <div style="color: #00ffcc; font-size: 1.8rem; line-height: 1;">◉</div>
+                        <div>
+                            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Interactive 3D Mapping</h4>
+                            <p class="caption" style="color: var(--text-secondary); margin: 0;">Navigate through a precise digital replica of the property.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; background: var(--card-background); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+                        <div style="color: #ff3366; font-size: 1.8rem; line-height: 1;">⚠</div>
+                        <div>
+                            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Real-time Threat Analysis</h4>
+                            <p class="caption" style="color: var(--text-secondary); margin: 0;">Instant prioritization of critical structural and thermal anomalies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="position: relative; display: flex; justify-content: center; align-items: center; padding: 2rem; order: 1;">
+                <!-- Decorative structural rings behind the image -->
+                <div style="position: absolute; width: 100%; aspect-ratio: 1; border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+                <div style="position: absolute; width: 80%; aspect-ratio: 1; border: 1px solid rgba(0, 255, 204, 0.1); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+
+                <div style="position: relative; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.8); border: 1px solid var(--border); animation: floatDashboard 8s infinite ease-in-out;">
+                    <img src="assets/images/home2_dashboard.png" alt="Interactive Data Dashboard" style="width: 100%; display: block;">
+                    
+                    <!-- Floating Data Points -->
+                    <div style="position: absolute; top: 30%; left: 25%; width: 10px; height: 10px; background: #00ffcc; border-radius: 50%; box-shadow: 0 0 15px #00ffcc; animation: pulseMarker 2s infinite;">
+                        <div style="position: absolute; top: -35px; left: -45px; background: rgba(0,0,0,0.9); padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid rgba(0,255,204,0.5); color: #fff; font-size: 0.75rem; white-space: nowrap; backdrop-filter: blur(5px);">Anomaly</div>
+                    </div>
+                    <div style="position: absolute; top: 60%; right: 30%; width: 10px; height: 10px; background: #ff3366; border-radius: 50%; box-shadow: 0 0 15px #ff3366; animation: pulseMarker 2.5s infinite; animation-delay: 1s;">
+                        <div style="position: absolute; top: -35px; right: -45px; background: rgba(0,0,0,0.9); padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid rgba(255,51,102,0.5); color: #fff; font-size: 0.75rem; white-space: nowrap; backdrop-filter: blur(5px);">Thermal Leak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 2: Deep-Scan Foundation Analysis -->
+    <section style="padding: 8rem 0; background: var(--secondary-background); position: relative; overflow: hidden;">
+        <div class="container grid grid-2" style="align-items: center; gap: 5rem;">
+            <div style="order: 2;">
+                <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="assets/images/home2_radar.png" alt="Ground Penetrating Radar" style="width: 100%; display: block; filter: contrast(1.1) brightness(0.9);">
+                    
+                    <!-- Radar Sweep Line -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0, 153, 255, 0.4), transparent); animation: radarSweep 4s infinite linear;"></div>
+                </div>
+            </div>
+            <div style="order: 1;">
+                <span class="subheading" style="color: var(--copper-clay);">Sub-Surface Scanning</span>
+                <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 1.5rem;">Foundation Intelligence</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem;">
+                    Don't guess what lies beneath. Our Ground Penetrating Radar (GPR) and seismic acoustic sensors analyze the structural integrity of your foundation, mapping rebar layouts, detecting voids, and identifying subterranean moisture intrusion before they cause catastrophic failure.
+                </p>
+                
+                <div style="display: flex; gap: 2rem; margin-top: 3rem;">
+                    <div style="flex: 1; padding: 1.5rem; background: var(--card-background); border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-left: 4px solid #0099ff;">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Void Detection</h4>
+                        <p class="caption" style="margin: 0;">Locating soil settlement beneath slabs.</p>
+                    </div>
+                    <div style="flex: 1; padding: 1.5rem; background: var(--card-background); border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-left: 4px solid var(--copper-clay);">
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Rebar Mapping</h4>
+                        <p class="caption" style="margin: 0;">Verifying structural reinforcement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 3: The Closing Advantage -->
+    <section style="padding: 12rem 0; position: relative; background-color: var(--secondary-background); display: flex; align-items: center; justify-content: center;">
+        <!-- Full Bleed Image Background -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('assets/images/home2_closing.png'); background-size: cover; background-position: center; filter: brightness(0.3) saturate(1.2); z-index: 1;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="max-width: 800px; width: 100%; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2); padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 5vw, 4rem); border-radius: 30px; text-align: center; animation: glowPulse 4s infinite alternate; box-shadow: 0 30px 60px rgba(0,0,0,0.4); box-sizing: border-box;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🤝</div>
+                <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); color: #fff; margin-bottom: 1.5rem; text-shadow: 0 5px 15px rgba(0,0,0,0.3);">The Closing Advantage</h2>
+                <p style="font-size: 1.25rem; line-height: 1.8; color: var(--soft-stone); margin-bottom: 3rem;">
+                    When you arrive at the closing table with a PropertyIntel report, you hold the ultimate negotiating leverage. Our comprehensive data removes emotion from the equation, giving you the definitive facts required to secure a fair deal.
+                </p>
+                <a href="schedule-inspection.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem; background: var(--copper-clay); border-color: var(--copper-clay);">Secure Your Investment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section style="padding: 8rem 0;">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 5rem;">
+                <span class="subheading" style="color: var(--copper-clay); letter-spacing: 3px; font-weight: 500;">TRUSTED INTELLIGENCE</span>
+                <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-top: 1rem;">Client Success Stories</h2>
+            </div>
+            <div class="grid grid-2" style="gap: 3rem;">
+                <div class="card" style="background: var(--secondary-background); border-radius: 30px; padding: 4rem 3rem; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,0.2); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; left: -10px; font-size: 8rem; color: var(--border); font-family: serif; line-height: 1;">"</div>
+                    <div style="color: #FFD700; font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 2px;">★★★★★</div>
+                    <p class="card-text" style="color: var(--text-primary); font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem; position: relative; z-index: 2;">"The level of detail in their structural report saved us from a $40,000 foundation mistake. Their use of thermal imaging was incredibly thorough. Highly recommended for any serious buyer."</p>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; align-items: center; gap: 1.5rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--copper-clay), #4a3831); color: var(--text-primary); display: flex; align-items: center; justify-content: center; font-weight: 550; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(144,116,92,0.3);">JS</div>
+                        <div>
+                            <div class="label" style="color: var(--text-primary); font-size: 1.1rem;">Jonathan S.</div>
+                            <span class="caption" style="color: var(--text-secondary);">Luxury Home Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background: var(--secondary-background); border-radius: 30px; padding: 4rem 3rem; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,0.2); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; left: -10px; font-size: 8rem; color: var(--border); font-family: serif; line-height: 1;">"</div>
+                    <div style="color: #FFD700; font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 2px;">★★★★★</div>
+                    <p class="card-text" style="color: var(--text-primary); font-size: 1.15rem; line-height: 1.8; margin-bottom: 2rem; position: relative; z-index: 2;">"As a commercial investor, I need definitive answers. PropertyIntel provided a comprehensive 80-page due diligence report that gave me absolute confidence in my acquisition."</p>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; align-items: center; gap: 1.5rem;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--property-sage), #3c4c40); color: var(--text-primary); display: flex; align-items: center; justify-content: center; font-weight: 550; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(95,116,100,0.3);">MR</div>
+                        <div>
+                            <div class="label" style="color: var(--text-primary); font-size: 1.1rem;">Michael R.</div>
+                            <span class="caption" style="color: var(--text-secondary);">Commercial Real Estate Investor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--slate-charcoal); color: #fff; padding: 4rem 1rem 2rem 1rem;">
+        <div class="container grid grid-4">
+            <div>
+                <a href="index.html" class="navbar-brand" style="margin-bottom: 1rem; padding: 0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    PropertyIntel
+                </a>
+                <p style="color: var(--soft-stone); font-size: 0.9rem;">Premium property intelligence and building surveys ensuring you avoid expensive mistakes.</p>
+                <div class="footer-socials" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#1877F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#1DA1F2'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#E1306C'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" style="color: var(--soft-stone); transition: color 0.3s ease, transform 0.3s ease; " onmouseover="this.style.color='#0077b5'; this.style.transform='translateY(-3px)'" onmouseout="this.style.color='var(--soft-stone)'; this.style.transform='translateY(0)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Services</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Buyer Inspections</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Seller Inspections</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="service-details.html" style="color: var(--soft-stone); text-decoration: none;">Commercial Surveys</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Company</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="about.html" style="color: var(--soft-stone); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="inspection-process.html" style="color: var(--soft-stone); text-decoration: none;">Our Process</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: var(--soft-stone); text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 style="color: #fff; margin-bottom: 1.5rem;">Legal</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--soft-stone); text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--soft-stone); text-decoration: none;">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; text-align: center; color: var(--soft-stone); font-size: 0.85rem;">
+            &copy; 2026 PropertyIntel Services. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | PropertyIntel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-background);
+            padding: 2rem;
+            position: relative;
+        }
+        .auth-card {
+            background: var(--card-background);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .form-control { width: 100%; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 1.5rem; font-family: inherit; font-size: 1rem; background: var(--card-background); color: var(--text-primary); transition: var(--transition); }
+        .form-control:focus { outline: none; border-color: var(--property-sage); box-shadow: 0 0 0 3px rgba(95, 116, 100, 0.1); }
+        .password-wrapper { position: relative; width: 100%; margin-bottom: 1.5rem; }
+        .password-wrapper input { margin-bottom: 0; padding-right: 2.5rem; }
+        .password-wrapper .toggle-eye {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card-background);
+            color: var(--text-primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+        .social-btn:hover { 
+            background: var(--secondary-background); 
+            border-color: var(--copper-clay); 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        }
+        .auth-link { color: var(--property-sage); text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .auth-link:hover { color: var(--copper-clay) !important; text-decoration: underline; }
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border);
+        }
+        .divider:not(:empty)::before { margin-right: 1rem; }
+        .divider:not(:empty)::after { margin-left: 1rem; }
+        .fixed-toggles {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        @media (max-width: 480px) {
+            .auth-container { padding-top: 5rem; padding-bottom: 2rem; align-items: center; justify-content: flex-start; min-height: 100vh; height: auto; }
+            .auth-card { padding: 2rem 1.5rem; margin: 0; width: 100%; max-width: 100%; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: var(--card-background); }
+            .nowrap-mobile { font-size: 0.75rem !important; white-space: nowrap !important; }
+            .nowrap-mobile label, .nowrap-mobile a { font-size: 0.75rem !important; }
+            .auth-card h2 { font-size: 1.8rem !important; white-space: normal !important; }
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <div class="auth-container">
+        <!-- Fixed toggles at top right -->
+        <div class="fixed-toggles">
+            <button id="theme-toggle" class="btn btn-secondary btn-icon" title="Toggle Dark Mode" style="border-radius: 50%; border: 1px solid var(--border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button id="rtl-toggle" class="btn btn-secondary btn-icon" title="Toggle RTL" style="border-radius: 50%; border: 1px solid var(--border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-rtl"><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-ltr"><line x1="3" y1="10" x2="17" y2="10"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="14" x2="21" y2="14"></line><line x1="3" y1="18" x2="17" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div class="auth-card">
+            <a href="index.html" class="navbar-brand" style="margin-bottom: 2rem; justify-content: center; width: 100%;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                PropertyIntel
+            </a>
+            
+            <h2 style="margin-bottom: 0.5rem;">Welcome Back</h2>
+            <p class="caption" style="margin-bottom: 2rem;">Access your inspection reports and intelligence dashboard.</p>
+            
+            <form onsubmit="event.preventDefault(); alert('Logged in!');">
+                <input type="email" class="form-control" placeholder="Email Address" required>
+                
+                <div class="password-wrapper">
+                    <input type="password" class="form-control" id="pwd" placeholder="Password" required>
+                    <svg class="toggle-eye" onclick="togglePwd('pwd')" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </div>
+
+                <div class="nowrap-mobile" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" style="accent-color: var(--property-sage);"> Remember Me
+                    </label>
+                    <a href="#" class="auth-link">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+            </form>
+
+            <div class="divider">OR</div>
+
+            <button class="social-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                Continue with Google
+            </button>
+            <button class="social-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 10.33c-.04-2.8 2.29-4.17 2.4-4.22-1.32-1.93-3.36-2.19-4.08-2.22-1.74-.18-3.39 1.03-4.28 1.03-.89 0-2.25-1.01-3.69-.98-1.89.03-3.64 1.1-4.61 2.8-1.97 3.42-.5 8.47 1.42 11.26.94 1.36 2.05 2.9 3.51 2.85 1.41-.05 1.95-.91 3.65-.91 1.7 0 2.2.91 3.67.88 1.5-.03 2.47-1.41 3.4-2.77 1.08-1.57 1.52-3.1 1.55-3.18-.03-.02-2.98-1.14-2.94-4.54z"/><path d="M14.96 4.41c.78-.94 1.3-2.24 1.16-3.54-1.13.05-2.48.75-3.28 1.7-.72.85-1.34 2.18-1.18 3.45 1.26.1 2.52-.66 3.3-1.61z"/></svg>
+                Continue with Apple
+            </button>
+
+            <div class="nowrap-mobile" style="margin-top: 2rem; font-size: 0.9rem;">
+                Don't have an account? <a href="register.html" class="auth-link">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePwd(id) {
+            const input = document.getElementById(id);
+            if (input.type === 'password') {
+                input.type = 'text';
+            } else {
+                input.type = 'password';
+            }
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
