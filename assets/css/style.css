@@ -753,8 +753,14 @@ details[open] summary {
     align-items: stretch;
   }
   .hero-content .card-actions {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+  }
+  .hero-content .card-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    white-space: nowrap;
   }
 }
 
@@ -952,3 +958,48 @@ details[open] summary {
     font-size: 0.8rem;
   }
 }
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--secondary-background);
+  color: var(--text-primary);
+  padding: 4rem 1rem 2rem 1rem;
+}
+
+.site-footer h5 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.site-footer p {
+  color: var(--text-secondary);
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--copper-clay);
+  transform: translateX(5px);
+}
+
+[dir="rtl"] .footer-link:hover {
+  transform: translateX(-5px);
+}
+
+.footer-social-icon {
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-3px);
+}
+.footer-social-icon.facebook:hover { color: #1877F2; }
+.footer-social-icon.twitter:hover { color: #1DA1F2; }
+.footer-social-icon.instagram:hover { color: #E1306C; }
+.footer-social-icon.linkedin:hover { color: #0077b5; }
