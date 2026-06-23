@@ -469,6 +469,7 @@ summary {
   position: relative;
   outline: none;
   color: var(--text-primary);
+  text-align: left;
 }
 summary::-webkit-details-marker {
   display: none;
@@ -493,6 +494,7 @@ details[open] summary {
   padding: 1.5rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  text-align: left;
 }
 
 /* RTL Support for FAQ */
@@ -680,6 +682,10 @@ details[open] summary {
   .card-actions {
     justify-content: center;
   }
+  .site-footer .navbar-brand,
+  .site-footer .footer-socials {
+    justify-content: center;
+  }
 }
 
 /* Rotating Inspector Badge */
@@ -709,6 +715,26 @@ details[open] summary {
 @keyframes rotateBadge {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .rotating-badge {
+    width: 90px;
+    height: 90px;
+    top: -1rem;
+    right: 0;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rotating-badge {
+    width: 75px;
+    height: 75px;
+    top: -0.5rem;
+    right: 0.5rem;
+    font-size: 0.5rem;
+  }
 }
 
 /* Scanning Laser Effect */
@@ -761,6 +787,17 @@ details[open] summary {
     width: 100%;
     max-width: 300px;
     white-space: nowrap;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .grid.grid-3.odd-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid.grid-3.odd-cards > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
   }
 }
 
